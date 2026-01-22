@@ -4,7 +4,7 @@ import UserList from './UserList';
 import Counter from './Counter';
 
 function App() {
-  // Step 3: ES6+ examples
+  // ES6 examples
   const names = ['Alice', 'Bob', 'Charlie'];
   const doubled = names.map(name => name.length * 2);
   console.log('Doubled lengths:', doubled);
@@ -13,13 +13,23 @@ function App() {
   const { name, age } = person;
   console.log('Destructured:', name, age);
 
-  // Step 4: props example
+  // Props example
   const users = ['Alice', 'Bob', 'Charlie'];
+
+  // ✅ Conditional rendering
+  const isLoggedIn = true;
 
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+
+        {/* Conditional rendering */}
+        {isLoggedIn ? (
+          <p>Welcome back!</p>
+        ) : (
+          <p>Please log in</p>
+        )}
 
         <h2>User List</h2>
         <UserList users={users} />
