@@ -1,23 +1,32 @@
 import logo from './logo.svg';
 import './App.css';
-
-
-const names = ['Alice','Bob','Charlie'];
-const doubled = names.map(name => name.length * 2);
-console.log('Doubled lengths:', doubled);
-
-const person = { name: 'Alice', age: 25 };
-const { name, age } = person;
-console.log('Destructured:', name, age);
+import UserList from './UserList';
+import Counter from './Counter';
 
 function App() {
+  // Step 3: ES6+ examples
+  const names = ['Alice', 'Bob', 'Charlie'];
+  const doubled = names.map(name => name.length * 2);
+  console.log('Doubled lengths:', doubled);
+
+  const person = { name: 'Alice', age: 25 };
+  const { name, age } = person;
+  console.log('Destructured:', name, age);
+
+  // Step 4: props example
+  const users = ['Alice', 'Bob', 'Charlie'];
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+
+        <h2>User List</h2>
+        <UserList users={users} />
+
+        <h2>Counter</h2>
+        <Counter />
+
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -30,15 +39,5 @@ function App() {
     </div>
   );
 }
+
 export default App;
-
-
-import UserList from './UserList';
-
-function App() {
-    const users = ['Alice','Bob','Charlie'];
-    return <UserList users={users} />;
-}
-
-
-
